@@ -21,7 +21,8 @@
             border: 5px solid green;
 
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* repeat(3, 1fr) = 1fr 1fr 1fr */
+            /*grid-template-columns: 1fr 1fr 1fr; !* fr = fraction *!*/
+            grid-template-columns: repeat(3, 1fr); /* repeat(3, 1fr) = 1fr 1fr 1fr */
         }
 
         section > div {
@@ -39,12 +40,12 @@
 
         section > div:nth-child(3) {
             background-color: yellow;
-            grid-column: 4/5;
-            grid-row: 1/4;
+            grid-row: 2/4;
         }
 
         section > div:nth-child(4) {
             background-color: deeppink;
+            grid-column: 2/4;
         }
 
         section > div:nth-child(5) {
@@ -61,8 +62,12 @@
 
         section > div:nth-child(8) {
             background-color: orange;
-            grid-column: 2/4;
         }
+
+        section > div:nth-child(9) {
+            background-color: mediumpurple;
+        }
+
     </style>
 
 </head>
@@ -74,7 +79,7 @@
         <div></div>
         <div></div>
         <div></div>
-
+        <div></div>
         <div></div>
         <div></div>
         <div></div>
