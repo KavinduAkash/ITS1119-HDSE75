@@ -15,13 +15,22 @@
 
     <style>
 
-        div {
-            width: 200px;
-            aspect-ratio: 1/1;
-            background-color: deeppink;
+        section {
+            width: 600px;
+            height: 500px;
+            background-color: yellow;
+            display: flex;
+        }
 
-            box-shadow: 20px 20px 20px 20px blue; /* x y blur spread color */
-            /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
+        section > div {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            border: 1px solid deepskyblue;
+
+            /*align-self: center;*/
+            /*align-self: start; !* default *!*/
+            align-self: end;
         }
 
     </style>
@@ -31,7 +40,11 @@
 <body>
 
 
+<section>
+
     <div></div>
+
+</section>
 
 
 </body>
