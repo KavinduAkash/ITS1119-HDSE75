@@ -27,7 +27,7 @@
     > Content is distributed as a block
     > get 100% parent's width
     > vertically
-    > 100% box model applies
+    > box model applies
     > h1 {display: block}
 
     2. Inline
@@ -41,14 +41,18 @@
     > a mix of block and inline
     > Only get content width
     > horizontally - No line breaks
-    > 100% box model applies
+    > box model applies
     > h1 {display: inline-block}
 
     */
 
-     div {
-        display: inline-block;
-     }
+        div {
+            display: inline;
+        }
+
+        span {
+            display: block;
+        }
 
     </style>
 
@@ -56,13 +60,15 @@
 
 <body>
 
+
 <!-- block level elements -->
     <div>A</div>
     <div>B</div>
 
 <!-- inline level elements -->
-<!--    <span>C</span>-->
-<!--    <span>D</span>-->
+    <span>A</span>
+    <span>B</span>
+
 
 </body>
 
