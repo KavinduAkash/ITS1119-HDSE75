@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+
+    <style>
+
+        div {
+            width: 250px;
+            height: 250px;
+            background: url("../assets/emoji.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            /*transform: rotate(45deg);*/
+            /*transform: rotateX(45deg);*/
+            /*transform: rotateY(45deg);*/
+            /*transform: rotate3d(1, 1, 1, 45deg); !* rotate3d(X, Y, Z, Angle) *!*/
+
+            transform: rotate(45deg);
+            /*transform-origin: left; !* top, bottom, left, right *!*/
+            transform-origin: 65% 65%;
+
+            /*
+            scale() - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale
+            skew() - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/skew
+            translate() - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/translate
+            */
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div></div>
+
+</body>
+</html>
