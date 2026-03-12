@@ -9,10 +9,11 @@
     <title>Media Query</title>
 
     <link rel="stylesheet" href="../assets/lib/normalize.css">
+    <link rel="stylesheet" href="https://www.hxstrive.com/cdn/libs/font-awesome/7.0.1/css/all.min.css">
 
     <style>
 
-        #desktop-header {
+        header {
             width: 100vw;
             height: 80px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -23,31 +24,47 @@
             font-size: 30px;
         }
 
-        #desktop-header > nav {
+        header > nav {
             height: fit-content;
             align-self: center;
         }
 
-        #desktop-header > nav > a {
+        header > nav > a {
             text-decoration: none;
             margin: 0px 10px;
         }
 
+        #mobile-nav {
+            display: none;
+        }
+
+        @media all and (max-width: 800px){
+            #mobile-nav {
+                display: block;
+            }
+            #desktop-nav {
+                display: none;
+            }
+        }
 
     </style>
 
 </head>
 <body>
 
-  <header id="desktop-header">
+  <header>
       <img src="../assets/logo.png" title="logo" alt="logo" width="200">
-      <nav>
+      <nav id="desktop-nav">
           <a href="">Home</a>
           <a href="">About</a>
           <a href="">Services</a>
           <a href="">Contact Us</a>
       </nav>
+      <nav id="mobile-nav">
+          <i class="fa-solid fa-bars"></i>
+      </nav>
   </header>
 
+  <link rel="stylesheet" href="https://www.hxstrive.com/cdn/libs/font-awesome/7.0.1/css/all.min.css">
 </body>
 </html>
