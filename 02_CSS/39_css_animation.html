@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+    <style>
+
+        div {
+            width: 200px;
+            aspect-ratio: 1/1;
+            background: yellow;
+            border: 4px solid black;
+
+            animation-name: myanimation;
+            animation-duration: 10000ms;
+        }
+
+        @keyframes myanimation { /* myanimation = animation name */
+            from { /* Keyframe 01 - Start */
+                background: pink;
+            }
+            to { /* Keyframe 02 - End */
+                background: red;
+                border-radius: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div></div>
+
+</body>
+</html>

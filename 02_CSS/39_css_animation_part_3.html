@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+    <style>
+
+        section {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            margin: 20px;
+
+            animation-name: car-animation;
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        #car-body {
+            width: 400px;
+            height: 200px;
+            background: lightskyblue;
+            border: 10px solid navy;
+        }
+
+        .wheel {
+            width: 100px;
+            background: lightgray;
+            border-width: 10px;
+            border-style: solid;
+            border-top-color: gray;
+            border-right-color: black;
+            border-left-color: black;
+            border-bottom-color: gray;
+
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+
+            position: absolute;
+
+            animation-name: car-wheel-animation;
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        #wheel1 {
+            bottom: -50px;
+            left: 25px;
+        }
+
+        #wheel2 {
+            right: 25px;
+            bottom: -50px;
+        }
+
+        @keyframes car-animation {
+            from {
+                margin-left: 20px;
+            }
+            to {
+                margin-left: 1000px;
+            }
+        }
+
+        @keyframes car-wheel-animation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <section>
+        <div id="car-body"></div>
+        <div id="wheel1" class="wheel"></div>
+        <div id="wheel2" class="wheel"></div>
+    </section>
+
+</body>
+</html>
