@@ -3,41 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="web, html, css, javascript, js, java, python">
-    <meta name="description" content="World best web development tutorials">
-    <meta name="author" content="IJSE">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
 
-    <title>z index</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-    <link rel="stylesheet" href="assets/lib/normalize.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Kablammo&display=swap" rel="stylesheet">
-
-<!--    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">-->
-    <link rel="stylesheet" href="https://www.hxstrive.com/cdn/libs/font-awesome/7.0.1/css/all.min.css">
-
-    <style>
-
-        #myIcon {
-            color: red;
-            font-size: 100px;
-        }
-
-    </style>
 
 </head>
 
 <body>
 
 
-    <h1><i id="myIcon" class="fa-regular fa-house"></i>Hello World!</h1>
+<script>
+    var x = 10;
+    let y = 20;
+    const z = 30;
 
-<!--    <script src="assets/lib/fontawesome/js/all.min.js"></script>-->
-    <script src="https://www.hxstrive.com/cdn/libs/font-awesome/7.0.1/js/all.min.js"></script>
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+    x = 100;
+    y = 200;
+    z = 300; // error: Assignment to constant variable.
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+</script>
+
 </body>
 
 </html>
