@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript</title>
+
+
+</head>
+
+<body>
+
+
+<script>
+
+  let result;
+  let x = "Hello, World!";
+  /*
+   012345678
+  "ABCDEFGHI"
+  */
+  /*
+   0123456789
+  "Hello, World!"
+  */
+  //============ charAt() ============
+  result = x.charAt(7);
+  console.log(result); // W
+  result = x.charAt(9);
+  console.log(result); // r
+
+  //============ charCodeAt() ============
+  result = x.charCodeAt(0);
+  console.log(result); // 72
+  result = x.charCodeAt(1);
+  console.log(result); // 101
+
+  //============ concat() ============
+  var a = "Hello";
+  var b = "Hii";
+  var c = "Wow";
+
+  result = a.concat(b);
+  console.log(result); // HelloHii
+
+  result = a.concat(b,c);
+  console.log(result); // HelloHiiWow
+
+  result = a.concat("*", b, "*", c);
+  console.log(result); // Hello*Hii*Wow
+
+  //============ endsWith() ============
+
+  var url1 = "www.ijse.lk";
+  var url2 = "www.wikipidia.com";
+  var url3 = "https://rootcode.io";
+
+  result = url1.endsWith(".lk");
+  console.log(result); // true
+
+  result = url2.endsWith(".com");
+  console.log(result); // true
+
+  result = url1.endsWith(".com");
+  console.log(result); // false
+
+  //============ startsWith() ============
+  result = url1.startsWith("www");
+  console.log(result); // true
+
+  result = url3.startsWith("http");
+  console.log(result); // true
+
+  result = url3.startsWith("www");
+  console.log(result); // false
+
+  //============ includes() ============
+  var fruits = "mango bananaapple orange";
+
+  result = fruits.includes("mango");
+  console.log(result); // true
+
+  result = fruits.includes("bananaap");
+  console.log(result); // true
+
+  result = fruits.includes("pineapple");
+  console.log(result); // false
+
+  //============ search() ============
+  result = fruits.search("bananaap");
+  console.log(result); // 6
+
+  result = fruits.search("pineapple");
+  console.log(result); // -1
+
+  //============ replace() ============
+  var y = "Hello world!";
+  result = y.replace("world", "ijse");
+  console.log(result); // Hello ijse!
+
+  y = "A B C D E F";
+  console.log(y); // A B C D E F
+  result = y.replace(" ", ",");
+  console.log(result); // A,B C D E F
+
+  //============ replaceAll() ============
+  result = y.replaceAll(" ", ",");
+  console.log(result); // A,B,C,D,E,F
+
+  //============ slice() ============
+  x = "Hello,World!";
+  result = x.slice(2, 7);
+  console.log(result); // llo,W
+
+  //============ substring() ============
+  x = "Hello,World!";
+  result = x.substring(2, 7);
+  console.log(result); // llo,W
+
+  //============ split() ============
+  x = "mango,banana,apple,orange";
+  result = x.split(",");
+  console.log(result); // ['mango', 'banana', 'apple', 'orange']
+
+  x = "mangoxxbananaxxapplexxorange";
+  result = x.split("xx");
+  console.log(result); // ['mango', 'banana', 'apple', 'orange']
+
+  //============ toLowerCase() and toUpperCase() ============
+  var msg = "Hello! Welcome to Sri Lanka";
+
+  result = msg.toLowerCase();
+  console.log(result); // hello! welcome to sri lanka
+
+  result = msg.toUpperCase();
+  console.log(result); // HELLO! WELCOME TO SRI LANKA
+
+  //============ trim() ============
+  msg = "         Hello! Welcome to Sri Lanka     ";
+  console.log(msg); //         Hello! Welcome to Sri Lanka
+  result = msg.trim();
+  console.log(result); // Hello! Welcome to Sri Lanka
+
+  //============ length ============
+  x = "ABCDEF";
+  console.log(x.length); // 6
+</script>
+
+</body>
+
+</html>
