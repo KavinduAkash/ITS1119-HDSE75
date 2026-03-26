@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript</title>
+
+
+</head>
+
+<body>
+
+
+<script>
+
+  console.log(typeof 10); // number
+  var x = 20;
+  console.log(typeof x); // number
+  console.log(typeof 10.5); // number
+
+  console.log(typeof "Hello!"); // string
+  console.log(typeof 'Hello!'); // string
+
+  console.log(typeof true); // boolean
+  console.log(typeof false); // boolean
+
+  /*
+  null is a primitive value that represents the intentional absence of any object value.
+  undefined is a primitive value used when a variable has not been assigned a value.
+
+  Reading-Resource: https://dev.to/sduduzog/null-vs-undefined-what-to-choose-what-to-use-11g
+  */
+  var y = undefined;
+  console.log(typeof undefined); // undefined
+
+  var z = null;
+  console.log(typeof null); // object
+
+  var a = {};
+  console.log(typeof {}); // object
+
+  var b = [10, 20, 30, 40, 50]; // In Java -> int[] b = {10, 20, 30, 40, 50};
+  console.log(typeof []); // object
+
+  var myMethod = function () {}
+  console.log(typeof function () {}); // function
+
+</script>
+
+</body>
+
+</html>
