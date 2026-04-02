@@ -11,34 +11,46 @@
 
   let x = ["Mahindha", "Ranil", "Anura"];
 
-  // push() - Adds one or more elements to the end of an array and returns the new length of the array.
+  /* =========================================================================================================
+  push() - Adds one or more elements to the end of an array and returns the new length of the array.
+  */
   x.push("Puthano"); // ['Mahindha', 'Ranil', 'Anura', "Puthano"]
 
-  // pop() - Removes the last element from an array and returns that element.
-  x.pop(); // ['Mahindha', 'Ranil', 'Anura']
+  /* =========================================================================================================
+  pop() - Removes the last element from an array and returns that element.
+   */
+    x.pop(); // ['Mahindha', 'Ranil', 'Anura']
 
-  // shift() - Removes the first element from an array
-  x.shift(); // ['Ranil', 'Anura']
+  /* =========================================================================================================
+  shift() - Removes the first element from an array
+   */
+    x.shift(); // ['Ranil', 'Anura']
 
-  // unshift() - Adds one or more elements to the beginning of an array
-  x.unshift("Gota"); // ['Gota', 'Ranil', 'Anura']
-  x.unshift("Namalbaby", "Yoshithababy"); // ['Namalbaby', 'Yoshithababy', 'Gota', 'Ranil', 'Anura']
+  /* =========================================================================================================
+  unshift() - Adds one or more elements to the beginning of an array
+   */
+    x.unshift("Gota"); // ['Gota', 'Ranil', 'Anura']
+    x.unshift("Namalbaby", "Yoshithababy"); // ['Namalbaby', 'Yoshithababy', 'Gota', 'Ranil', 'Anura']
 
-  // concat() - Joins two or more arrays and returns a new array.
-  var a = ["A", "B", "C"];
-  var b = ["D", "E", "F"];
-  var c = ["G", "H", "I"];
+  /* =========================================================================================================
+  concat() - Joins two or more arrays and returns a new array.
+   */
+    var a = ["A", "B", "C"];
+    var b = ["D", "E", "F"];
+    var c = ["G", "H", "I"];
 
-  var result1 = a.concat(b);
-  console.log("Result1: ", result1);
+    var result1 = a.concat(b);
+    console.log("Result1: ", result1);
 
-  var result2 = b.concat(a);
-  console.log("Result2: ", result2);
+    var result2 = b.concat(a);
+    console.log("Result2: ", result2);
 
-  var result3 = a.concat(b, c);
-  console.log("Result3: ", result3);
+    var result3 = a.concat(b, c);
+    console.log("Result3: ", result3);
 
-  // slice() - Get a copy of an array portion
+  /* =========================================================================================================
+    slice() - Get a copy of an array portion
+   */
   var y = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
   var r1 = y.slice(3);
   console.log("r1: ", r1); // [40, 50, 60, 70, 80, 90, 100]
@@ -52,6 +64,96 @@
   var r4 = y.slice(-3);
   console.log("r4: ", r4); // [80, 90, 100]
 
+  /* =========================================================================================================
+  splice():
+  Adds or removes elements from an array at a specified position.
+   */
+  var y = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var r5 = y.splice(7);
+  console.log("r5: ", r5); // [80, 90, 100]
+  console.log("y: ", y); // [10, 20, 30, 40, 50, 60, 70]
+
+  var r6 = y.splice(1, 5, 100, 200, 300);
+  console.log("r6: ", r6); // [20, 30, 40, 50, 60]
+  console.log("y: ", y); // [10, 100, 200, 300, 70]
+
+  /* =========================================================================================================
+  includes():
+  Determines whether an array includes a certain value among its entries.
+  */
+  let fruits = ["Mango", "Banana", "Apple", "Pineapple"];
+  console.log(fruits.includes("Banana")); // true
+  console.log(fruits.includes("banana")); // false
+
+  /* =========================================================================================================
+  forEach():
+  Executes a provided function once for each array.
+  */
+  fruits.forEach(function(item) {
+      console.log(item);
+  })
+
+  /* =========================================================================================================
+  map():
+  Executes a provided function once for each array.
+  */
+
+  // fruits.map((item) => {
+  //     console.log(item);
+  // });
+
+  // fruits.map(item => {
+  //     console.log(item);
+  // });
+
+  fruits.map((item, index) => {
+      console.log(index + " : " + item);
+  });
+
+  /* =========================================================================================================
+  filter():
+  Creates a new array with all elements that pass the test implemented by the provided function.
+  */
+  var k = [10, 11, 20, 21, 30, 31, 40, 41, 50, 51];
+
+  let new_k = k.filter(function(item) {
+      let result = item%2==0;
+      return result;
+  });
+
+  console.log("New K :" + new_k);
+
+  /* =========================================================================================================
+  sort():
+  Sorts the elements of an array in place and returns the array.
+  */
+  let j = [12, 10, 25, 22, 13, 20, 55, 41, 67, 42, 11];
+  let sorted_j = j.sort(); // ascending order
+  console.log(sorted_j); // [10, 11, 12, 13, 20, 22, 25, 41, 42, 55, 67]
+
+  let sorted_j_d = j.sort((a,b) => b - a); // descending order
+  console.log(sorted_j_d); // [67, 55, 42, 41, 25, 22, 20, 13, 12, 11, 10]
+
+  /* =========================================================================================================
+  reverse():
+  Reverses the order of the elements in an array
+  */
+  var v = ["A", "B", "C", "D", "E"];
+  var reverse_v = v.reverse();
+  console.log(reverse_v);
+
+  /* =========================================================================================================
+  join():
+  */
+  var join_result_1 = v.join(",");
+  var join_result_2 = v.join("*");
+  var join_result_3 = v.join("=>");
+  var join_result_4 = v.join("#");
+
+  console.log(join_result_1);
+  console.log(join_result_2);
+  console.log(join_result_3);
+  console.log(join_result_4);
 
 </script>
 </body>
