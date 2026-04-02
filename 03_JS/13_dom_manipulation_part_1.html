@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <h1 id="topic">Welcome to JavaScript!</h1>
+
+<script>
+
+    var element = document.getElementById("topic");
+    var txt = element.innerText;
+    console.log(txt); // Welcome to JavaScript!
+
+    element.innerText = "Hi!!! Welcome to Sri Lanka!!!"
+    console.log(element.innerText); // Hi!!! Welcome to Sri Lanka!!!
+
+</script>
+</body>
+</html>

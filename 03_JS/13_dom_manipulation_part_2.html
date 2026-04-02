@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <h1 id="topic">0</h1>
+    <button id="btn">Increase</button>
+
+<script>
+
+    var h1_element = document.getElementById("topic");
+    var btn_element = document.getElementById("btn");
+
+    var value = 0;
+
+    btn_element.addEventListener('click', () => {
+        value+=1;
+        h1_element.innerText=value;
+    });
+
+
+</script>
+</body>
+</html>
