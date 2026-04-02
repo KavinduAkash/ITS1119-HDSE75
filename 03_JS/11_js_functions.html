@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript</title>
+
+
+</head>
+
+<body>
+
+
+<script>
+
+  /*
+    In Java
+    =======
+    public void myMethod() {
+      s.o.p("Hello World!");
+    }
+
+    myMethod();
+  */
+
+  // // Named Function ===================================
+  // // case 01:
+  // function myFunction() {
+  //   console.log("Hello World!");
+  // }
+  //
+  // myFunction();
+  //
+  // // case 02:
+  // function findSum(num1, num2) {
+  //   console.log(num1 + num2);
+  // }
+  //
+  // findSum(10, 20);
+  //
+  // // case 03:
+  // function findMul(num1, num2) {
+  //   return num1 * num2;
+  // }
+  // var result = findMul(10, 20);
+  // console.log("Result: ", result);
+
+
+  // // Function Expression ===================================
+  // // case 01:
+  // const myFunction = function () {
+  //   console.log("Hello World!");
+  // }
+  //
+  // myFunction();
+  //
+  // // case 02:
+  // const findSum = function (num1, num2) {
+  //   console.log(num1 + num2);
+  // }
+  //
+  // findSum(10, 20);
+  //
+  // // case 03:
+  // const findMul = function (num1, num2) {
+  //   return num1 * num2;
+  // }
+  // var result = findMul(10, 20);
+  // console.log("Result: ", result);
+
+
+
+  // Arrow Function ===================================
+  // case 01:
+  // const myFunction = () => {
+  //   console.log("Hello World!");
+  // }
+  //
+  // myFunction();
+  //
+  // // case 02:
+  // const findSum = (num1, num2) => {
+  //   console.log(num1 + num2);
+  // }
+  //
+  // findSum(10, 20);
+  //
+  // // case 03:
+  // const findMul = (num1, num2) => {
+  //   return num1 * num2;
+  // }
+  // var result = findMul(10, 20);
+  // console.log("Result: ", result);
+
+  // Function Constructor ===================================
+  // var func = new Function("a", "b", "c", "return a + b + c");
+  // var r = func(10, 20, 30);
+  // console.log("Result: ", r); // 60
+
+  // Callback Function ===================================
+  function a(callbackfun) {
+    console.log("I'm A");
+    callbackfun();
+  }
+
+  function b() {
+    console.log("I'm B");
+  }
+
+  function c() {
+    console.log("I'm C");
+  }
+
+  a(b);
+  a(c);
+
+</script>
+
+</body>
+
+</html>
