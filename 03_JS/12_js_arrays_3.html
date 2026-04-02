@@ -11,20 +11,20 @@
 
   let x = ["Mahindha", "Ranil", "Anura"];
 
-  // Adds one or more elements to the end of an array and returns the new length of the array.
+  // push() - Adds one or more elements to the end of an array and returns the new length of the array.
   x.push("Puthano"); // ['Mahindha', 'Ranil', 'Anura', "Puthano"]
 
-  // Removes the last element from an array and returns that element.
+  // pop() - Removes the last element from an array and returns that element.
   x.pop(); // ['Mahindha', 'Ranil', 'Anura']
 
-  // Removes the first element from an array
+  // shift() - Removes the first element from an array
   x.shift(); // ['Ranil', 'Anura']
 
-  // Adds one or more elements to the beginning of an array
+  // unshift() - Adds one or more elements to the beginning of an array
   x.unshift("Gota"); // ['Gota', 'Ranil', 'Anura']
   x.unshift("Namalbaby", "Yoshithababy"); // ['Namalbaby', 'Yoshithababy', 'Gota', 'Ranil', 'Anura']
 
-  // Joins two or more arrays and returns a new array.
+  // concat() - Joins two or more arrays and returns a new array.
   var a = ["A", "B", "C"];
   var b = ["D", "E", "F"];
   var c = ["G", "H", "I"];
@@ -38,7 +38,13 @@
   var result3 = a.concat(b, c);
   console.log("Result3: ", result3);
 
+  // slice() - Get a copy of an array portion
+  var y = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var r1 = y.slice(3);
+  console.log("r1: ", r1); // [40, 50, 60, 70, 80, 90, 100]
 
+  var r2 = y.slice(3, 8);
+  console.log("r2: ", r2); // [40, 50, 60, 70, 80]
 
 
 </script>
