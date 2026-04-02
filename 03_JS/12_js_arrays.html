@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+
+
+<script>
+
+  // 1. Literal Based
+  let x = []; // empty array
+  x = [10, 20, 30, 40, 50];
+  console.log(x);
+
+  // 2. Constructor Based
+  let y = new Array(10, 20, 30, 40, 50);
+  console.log(y);
+
+  x = [10, 20, 30, 40, 50, "Sri Lanka", function() {console.log("Hi!!!")}, ["A", "B", "C"], true];
+  console.log(x);
+
+  // Read Array Items ===========================================================================
+  console.log(x[0]); // 10
+  console.log(x[1]); // 20
+  console.log(x[5]); // "Sri Lanka"
+  console.log(x[6]); // ƒ () {console.log("Hi!!!")}
+  console.log(x[7]); // ["A", "B", "C"]
+  console.log(x[8]); // true
+
+  console.log(x[9]); // undefined
+
+  console.log(x[7][0]); // A
+  console.log(x[7][1]); // B
+  console.log(x[7][2]); // C
+  console.log(x[7][3]); // undefined
+
+  x[6](); // Hi!!!
+
+  // Update Array Items ===========================================================================
+  x[0] = "UK";
+  x[1] = function(a, b) { return a + b; }
+  x[2] = [100, 200, 300];
+  console.log(x);
+
+  // 2d Arrays ===========================================================================
+  x = [[10, 20, 30, 40], [100, 200, 300], ["Hi", "Wow"], [["Sri Lanka", "India"], ["UK", "USA"]]];
+  console.log(x);
+
+</script>
+</body>
+</html>
