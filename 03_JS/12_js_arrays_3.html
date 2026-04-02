@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+
+
+<script>
+
+  let x = ["Mahindha", "Ranil", "Anura"];
+
+  // Adds one or more elements to the end of an array and returns the new length of the array.
+  x.push("Puthano"); // ['Mahindha', 'Ranil', 'Anura', "Puthano"]
+
+  // Removes the last element from an array and returns that element.
+  x.pop(); // ['Mahindha', 'Ranil', 'Anura']
+
+  // Removes the first element from an array
+  x.shift(); // ['Ranil', 'Anura']
+
+  // Adds one or more elements to the beginning of an array
+  x.unshift("Gota"); // ['Gota', 'Ranil', 'Anura']
+  x.unshift("Namalbaby", "Yoshithababy"); // ['Namalbaby', 'Yoshithababy', 'Gota', 'Ranil', 'Anura']
+
+  // Joins two or more arrays and returns a new array.
+  var a = ["A", "B", "C"];
+  var b = ["D", "E", "F"];
+  var c = ["G", "H", "I"];
+
+  var result1 = a.concat(b);
+  console.log("Result1: ", result1);
+
+  var result2 = b.concat(a);
+  console.log("Result2: ", result2);
+
+  var result3 = a.concat(b, c);
+  console.log("Result3: ", result3);
+
+
+
+
+</script>
+</body>
+</html>
