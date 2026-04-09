@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+</head>
+<body>
+
+    <h1>Hello World 1</h1>
+    <h1>Hello World 2</h1>
+    <h2>Hello Java!</h2>
+    <h3>Hello HTML!</h3>
+
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda dicta dolorem enim error, excepturi harum hic, inventore magni molestiae optio perspiciatis quisquam, sit sunt ut? Cumque ipsum iste iure?</p>
+    </section>
+
+<script src="../assets/lib/jquery-4.0.0.min.js"></script>
+<script>
+
+// let h1_elements = document.getElementsByTagName("h1");
+// let h1_element = h1_elements[0];
+
+// let h1_elements = $('h1'); // $()
+// let h1_element_1 = h1_elements[0];
+// let h1_element_2 = h1_elements[1];
+
+// get element
+// document.getElementsByTagName("h1")[0]
+let h1_element_1 = $('h1').eq(0);
+let h1_element_2 = $('h1').eq(1);
+
+// get inner text
+// document.getElementsByTagName("h1")[0].innerText
+let h1_element_1_text = $('h1').eq(0).text();
+let h1_element_2_text = $('h1').eq(1).text()
+console.log(h1_element_1_text);
+console.log(h1_element_2_text);
+
+// update inner text
+// document.getElementsByTagName("h1")[0].innerText = "Welcome to Sri Lanka!"
+$("h1").eq(1).text("Welcome to Sri Lanka!");
+
+// get inner HTML
+// document.getElementsByTagName("h1")[0].innerHtml
+let section_inner_html = $("section").eq(0).html();
+
+// update inner HTML
+// document.getElementsByTagName("h1")[0].innerHtml = "<h1>Welcome to IJSE</h1>"
+$("section").eq(0).html("<h1>Welcome to IJSE</h1>");
+
+</script>
+
+</body>
+</html>
