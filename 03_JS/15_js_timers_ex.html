@@ -35,9 +35,15 @@
 </section>
 
 <script>
+    var list = ["A", "B", "C", "D", "E"];
 
-
-
+    setInterval(() => {
+        list.unshift(list.pop());
+        for(let i=0; i<list.length; i++) {
+            document.getElementsByTagName("div")[i].innerText = list[i];
+        }
+    }, 800)
 </script>
+
 </body>
 </html>
