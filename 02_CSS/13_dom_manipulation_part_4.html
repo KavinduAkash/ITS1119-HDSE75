@@ -17,7 +17,7 @@
 
 <h2>HTML Course</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
+<p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
 
 <h2>CSS Course</h2>
 
@@ -25,7 +25,7 @@
 
 <h2>JS Course</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
+<p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
 
 <script>
 
@@ -43,7 +43,14 @@ first_h2_element.style.color = "pink";
 second_h2_element.style.color = "blue";
 third_h2_element.style.color = "green";
 
-// getElementsByTagName
+// getElementsByClassName()
+var myClass_elements = document.getElementsByClassName("myClass");
+var myClass_element_1 = myClass_elements[0];
+var myClass_element_2 = myClass_elements[1];
+
+myClass_element_1.style.color = "orange";
+myClass_element_2.style.color = "yellow";
+
 </script>
 
 </body>
