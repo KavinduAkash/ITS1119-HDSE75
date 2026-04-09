@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery CSS</title>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+
+<script src="../assets/lib/jquery-4.0.0.min.js"></script>
+<script>
+
+    // document.getElementsByTagName("h1")[0].style.cssText = "color: red; background: pink";
+
+    // let style = {
+    //     color: 'blue',
+    //     background: 'lightblue'
+    // }
+    // $('h1').eq(0).css(style);
+
+    $('h1').eq(0).css({
+        color: 'blue',
+        background: 'lightblue'
+    });
+
+</script>
+
+</body>
+</html>
