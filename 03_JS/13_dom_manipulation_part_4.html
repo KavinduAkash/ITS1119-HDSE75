@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+    <style>
+
+      /*li:first-child > div {*/
+      /*  color: red;*/
+      /*}*/
+
+    </style>
+
+</head>
+<body>
+
+
+<h1 id="topic">Course</h1>
+
+<h2>HTML Course</h2>
+
+<p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
+
+<h2 name="subtopic1">CSS Course</h2>
+
+<p name="subtopic2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
+
+<h2 name="subtopic1">JS Course</h2>
+
+<p class="myClass" id="subtopic1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto minus nostrum officiis omnis pariatur quasi sapiente tempore velit. Commodi, dicta, omnis. Asperiores eos iusto labore maiores quod reprehenderit suscipit, veniam?</p>
+
+
+<ol>
+  <li>
+    <div>A</div>
+  </li>
+  <li>
+    <div>B</div>
+  </li>
+  <li>
+    <div>C</div>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <div>D</div>
+  </li>
+  <li>
+    <div>E</div>
+  </li>
+  <li>
+    <div>F</div>
+  </li>
+</ul>
+
+
+<script>
+
+// getElementById()
+var h1_element = document.getElementById("topic");
+h1_element.style.color = "red";
+
+// getElementsByTagName()
+var h2_elements = document.getElementsByTagName("h2"); // [h2, h2, h2]
+var first_h2_element = h2_elements[0];
+var second_h2_element = h2_elements[1];
+var third_h2_element = h2_elements[2];
+
+first_h2_element.style.color = "pink";
+second_h2_element.style.color = "blue";
+third_h2_element.style.color = "green";
+
+// getElementsByClassName()
+var myClass_elements = document.getElementsByClassName("myClass");
+var myClass_element_1 = myClass_elements[0];
+var myClass_element_2 = myClass_elements[1];
+
+myClass_element_1.style.color = "orange";
+myClass_element_2.style.color = "yellow";
+
+// getElementsByName()
+var subtopic1_elements = document.getElementsByName("subtopic1");
+subtopic1_elements[0].style.backgroundColor = "pink";
+subtopic1_elements[1].style.backgroundColor = "orange";
+
+// querySelector()
+// document.querySelector("ol > li:first-child > div").style.color = "red";
+// document.querySelector("ol > li:last-child > div").style.color = "deeppink";
+// document.querySelector("ol").style.color = "green";
+
+// querySelectorAll()
+// document.querySelector("li:first-child > div").style.color = "red";
+var div_elements = document.querySelectorAll("li:first-child > div");// [div, div]
+div_elements[0].style.color = "red";
+div_elements[1].style.color = "orange";
+
+
+</script>
+
+</body>
+</html>
