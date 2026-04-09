@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+
+    <style>
+
+        div {
+            width: 100px;
+            height: 80px;
+            background: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="myDiv"></div>
+
+<script>
+
+    var myDiv_element = document.getElementById("myDiv");
+
+    // myDiv_element.style.width = "100px";
+    // myDiv_element.style.height = "80px";
+    // myDiv_element.style.backgroundColor = "red";
+
+    // var styles = "width: 100px; height: 80px; background: blue;";
+    // myDiv_element.style.cssText = styles;
+
+    myDiv_element.style.cssText = "width: 100px; height: 80px; background: pink;";
+
+</script>
+</body>
+</html>
