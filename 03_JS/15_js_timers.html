@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+
+</head>
+<body>
+
+<h1 id="topic">0</h1>
+<button id="stop_btn">Stop</button>
+
+<script>
+    var num = 0;
+    var h1_element = document.getElementById("topic");
+    var btn_element = document.getElementById("stop_btn");
+
+   // setTimeout() , setInterval()
+
+   setTimeout(() => {
+       console.log("Timeout!!!");
+   }, 8000); // 8000 -> 8000ms
+
+   var interval_obj = setInterval(() => {
+       num+=1;
+       h1_element.innerText = num;
+   }, 300);
+
+   btn_element.addEventListener("click", () => {
+       clearInterval(interval_obj);
+   });
+
+
+</script>
+</body>
+</html>
