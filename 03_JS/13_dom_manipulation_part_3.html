@@ -50,11 +50,12 @@
 <body>
 
 <header>
-  <button>Menu</button>
+  <button id="menu_btn">Menu</button>
 </header>
+
 <main>
-  <aside></aside>
-  <section>
+  <aside id="side_bar"></aside>
+  <section id="content">
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi aperiam cupiditate delectus distinctio doloribus dolorum enim esse facere incidunt modi mollitia nesciunt ratione recusandae reprehenderit veniam, veritatis voluptas.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi aperiam cupiditate delectus distinctio doloribus dolorum enim esse facere incidunt modi mollitia nesciunt ratione recusandae reprehenderit veniam, veritatis voluptas.
@@ -160,6 +161,30 @@
   </section>
 </main>
 
+
+<script>
+
+  var btn_element = document.getElementById("menu_btn");
+  var sidebar_element = document.getElementById("side_bar");
+  var content_element = document.getElementById("content");
+
+  sidebar_element.style.display = "block";
+
+  btn_element.addEventListener("click", () => {
+    // alert("clicked!!!");
+    // sidebar_element.style.backgroundColor = "red";
+
+    if(sidebar_element.style.display == "block") {
+      sidebar_element.style.display = "none";
+      content_element.style.marginLeft = "0px";
+    } else {
+      sidebar_element.style.display = "block";
+      content_element.style.marginLeft = "350px";
+    }
+
+  })
+
+</script>
 
 </body>
 </html>
