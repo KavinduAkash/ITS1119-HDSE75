@@ -42,6 +42,9 @@ const addStudentData = (sid, sname, snic, sphone, saddress) => {
     };
     student_db.push(new_student);
     cleanStudentForm();
+
+    Swal.fire({ icon: "success", title: "Student saved successfully!"});
+
     loadStudentTbl();
 }
 
@@ -52,13 +55,12 @@ $('#student_save_btn').on('click', function () {
     let phone = $('#student_phone_input').val();
     let address = $('#student_address_input').val();
 
-    (id == "") ?
-        alert("Invalid Id!") :
-        (student_db.find(item => item.id==id)) ? alert("Id is already exist!") :
-            (name == "") ? alert("Invalid Name!") :
-                (!nic_regex.test(nic)) ? alert("Invalid NIC!") :
-                    (!phone_regex.test(phone)) ? alert("Invalid Phone!") :
-                        (address == "") ? alert("Invalid Address!") : addStudentData(id, name, nic, phone, address);
+    (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
+        (student_db.find(item => item.id==id)) ? Swal.fire({ icon: "error", title: "Id is already exist!"}) :
+            (name == "") ? Swal.fire({ icon: "error", title: "Invalid Name!"}) :
+                (!nic_regex.test(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
+                    (!phone_regex.test(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
+                        (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : addStudentData(id, name, nic, phone, address);
 })
 //------------------------- End: Student Add ------------------------------
 
@@ -74,6 +76,9 @@ const updateStudentData = (sid, sname, snic, sphone, saddress) => {
     }
 
     cleanStudentForm();
+
+    Swal.fire({ icon: "success", title: "Student updated successfully!"});
+
     loadStudentTbl();
 }
 
@@ -84,12 +89,12 @@ $('#student_update_btn').on('click', function () {
     let phone = $('#student_phone_input').val();
     let address = $('#student_address_input').val();
 
-    (id == "") ? alert("Invalid Id!") :
-        (!(student_db.find(item => item.id==id))) ? alert("Student not found!") :
-            (name == "") ? alert("Invalid Name!") :
-                (!nic_regex.test(nic)) ? alert("Invalid NIC!") :
-                    (!phone_regex.test(phone)) ? alert("Invalid Phone!") :
-                        (address == "") ? alert("Invalid Address!") : updateStudentData(id, name, nic, phone, address);
+    (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
+        (!(student_db.find(item => item.id==id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) :
+                (name == "") ? Swal.fire({ icon: "error", title: "Invalid Name!"}) :
+                    (!nic_regex.test(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
+                        (!phone_regex.test(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
+                            (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : updateStudentData(id, name, nic, phone, address);
 })
 //------------------------- End: Student Update ------------------------------
 
@@ -102,13 +107,26 @@ const deleteStudentData = (sid) => {
     }
 
     cleanStudentForm();
+    Swal.fire({ icon: "success", title: "Student deleted successfully!"});
     loadStudentTbl();
 }
 
 $('#student_delete_btn').on('click', function () {
     let id = $('#student_id_input').val();
 
-    (id == "") ? alert("Invalid Id!") :
-        (!(student_db.find(item => item.id==id))) ? alert("Student not found!") : deleteStudentData(id);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
+                (!(student_db.find(item => item.id==id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) : deleteStudentData(id);
+        };
+    });
 });
 //------------------------- End: Student Delete ------------------------------
