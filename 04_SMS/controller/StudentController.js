@@ -1,4 +1,4 @@
-import {addStudentData, updateStudentData, deleteStudentData, getStudentData} from '../model/StudentModel.js';
+import {addStudentData, updateStudentData, deleteStudentData, getStudentData, getStudentDataByIndex, getStudentDataById} from '../model/StudentModel.js';
 import {check_nic, check_phone} from '../utils/regex_utils.js';
 
 //------------------------- Load Student Tbl (Read) ------------------------------
@@ -18,7 +18,7 @@ const cleanStudentForm = () => {
 
 //------------------------- Click on Student Row ------------------------------
 $('#student_tbody').on('click', 'tr', function () {
-    let student_obj = student_db[$(this).index()];
+    let student_obj = getStudentDataByIndex($(this).index());
 
     $('#student_id_input').val(student_obj.id);
     $('#student_name_input').val(student_obj.name);
@@ -36,7 +36,7 @@ $('#student_save_btn').on('click', function () {
     let address = $('#student_address_input').val();
 
     (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
-        (student_db.find(item => item.id==id)) ? Swal.fire({ icon: "error", title: "Id is already exist!"}) :
+        (getStudentDataById(id)) ? Swal.fire({ icon: "error", title: "Id is already exist!"}) :
             (name == "") ? Swal.fire({ icon: "error", title: "Invalid Name!"}) :
                 (!check_nic(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
                     (!check_phone(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
@@ -57,10 +57,10 @@ $('#student_update_btn').on('click', function () {
     let address = $('#student_address_input').val();
 
     (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
-        (!(student_db.find(item => item.id==id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) :
+        (!(getStudentDataById(id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) :
                 (name == "") ? Swal.fire({ icon: "error", title: "Invalid Name!"}) :
-                    (!nic_regex.test(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
-                        (!phone_regex.test(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
+                    (!check_nic(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
+                        (!check_phone(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
                             (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : updateStudentData(id, name, nic, phone, address);
 
     cleanStudentForm();
@@ -84,7 +84,7 @@ $('#student_delete_btn').on('click', function () {
     }).then((result) => {
         if (result.isConfirmed) {
             (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
-                (!(student_db.find(item => item.id==id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) : deleteStudentData(id);
+                (!(getStudentDataById(id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) : deleteStudentData(id);
         };
 
         cleanStudentForm();

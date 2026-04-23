@@ -38,9 +38,14 @@ const deleteStudentData = (sid) => {
     return student_db;
  }
 
-// --------------------------- Get Student by Id ---------------------------
-const getStudentDataById = (id) => {
-
+// --------------------------- Get Student by Index ---------------------------
+const getStudentDataByIndex = (index) => {
+    return student_db[index];
 }
 
- export {addStudentData, updateStudentData, deleteStudentData, getStudentData};
+// --------------------------- Get Student by Id ---------------------------
+const getStudentDataById = (id) => {
+    return student_db.find(item => item.id==id);
+}
+
+ export {addStudentData, updateStudentData, deleteStudentData, getStudentData, getStudentDataByIndex, getStudentDataById};
