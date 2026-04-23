@@ -96,41 +96,7 @@
             </tr>
             </thead>
             <tbody id="student_tbody">
-            <tr>
-                <td>1</td>
-                <td>Kavindu</td>
-                <td>12345678</td>
-                <td>0767221818</td>
-                <td>Panadura</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Kavindu</td>
-                <td>12345678</td>
-                <td>0767221818</td>
-                <td>Panadura</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Kavindu</td>
-                <td>12345678</td>
-                <td>0767221818</td>
-                <td>Panadura</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Kavindu</td>
-                <td>12345678</td>
-                <td>0767221818</td>
-                <td>Panadura</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Kavindu</td>
-                <td>12345678</td>
-                <td>0767221818</td>
-                <td>Panadura</td>
-            </tr>
+
             </tbody>
         </table>
 
@@ -160,10 +126,31 @@
     // ------------------------ Sidebar Handler --------------------------
 
 
+
+    let student_db = [];
+
+
     //------------------------- Add to Student Table ------------------------------
-    const addToStudentTbl = (id, name, nic, phone, address) => {
-        let new_row = `<tr> <td>${id}</td> <td>${name}</td> <td>${nic}</td> <td>${phone}</td> <td>${address}</td> </tr>`;
-        $('#student_tbody').append(new_row);
+    const loadStudentTbl = () => {
+        $('#student_tbody').empty();
+
+        student_db.map((item, index) => {
+            let data = `${item.id},${item.name},${item.nic},${item.phone},${item.address}`;
+            let new_row = `<tr data-index="${data}"> <td>${item.id}</td> <td>${item.name}</td> <td>${item.nic}</td> <td>${item.phone}</td> <td>${item.address}</td> </tr>`;
+            $('#student_tbody').append(new_row);
+        });
+    }
+
+    const addStudentData = (sid, sname, snic, sphone, saddress) => {
+        let new_student = {
+            id: sid,
+            name: sname,
+            nic: snic,
+            phone: sphone,
+            address: saddress
+        };
+        student_db.push(new_student);
+        loadStudentTbl();
     }
 
     //------------------------- Student Add ------------------------------
@@ -179,7 +166,27 @@
             (name == "") ? alert("Invalid Name!") :
                 (!nic_regex.test(nic)) ? alert("Invalid NIC!") :
                     (!phone_regex.test(phone)) ? alert("Invalid Phone!") :
-                        (address == "") ? alert("Invalid Address!") : addToStudentTbl(id, name, nic, phone, address);
+                        (address == "") ? alert("Invalid Address!") : addStudentData(id, name, nic, phone, address);
+    })
+
+    //------------------------- Click on Student Row ------------------------------
+
+    $('#student_tbody').on('click', 'tr', function () {
+        let data = $(this).data('index');
+        let data_array = data.split(",");
+        console.log(data_array);
+
+        let id = data_array[0];
+        let name = data_array[1];
+        let nic = data_array[2];
+        let phone = data_array[3];
+        let address = data_array[4];
+
+        $('#student_id_input').val(id);
+        $('#student_name_input').val(name);
+        $('#student_nic_input').val(nic);
+        $('#student_phone_input').val(phone);
+        $('#student_address_input').val(address);
     })
 
 </script>

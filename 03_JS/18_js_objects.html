@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Objects</title>
+
+</head>
+<body>
+
+<script>
+
+    // Constructor Function --------------------------------------------------------------------------------------------
+    /*
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    // create a new object
+    let p = new Person("Kavindu", 32);
+    console.log(p);
+
+    // access attributes
+    console.log("name: ", p.name);
+    console.log("age: ", p.age);
+
+    // update attributes
+    p.name = "Ravindu";
+    p.age = 21;
+
+    console.log("name: ", p.name);
+    console.log("age: ", p.age);
+
+
+    function Student(name, age) {
+        this._name = name;
+        this.age = age;
+    }
+
+    let s = new Student("Kavindu", 32);
+    console.log(s);
+
+    // s._name = "Malindu"; // do not do this. _ means it is a private attribute
+
+    console.log(s);
+    */
+
+    // Class Syntax --------------------------------------------------------------------------------------------
+    /*
+    class Person {
+        #fname;
+        #lname;
+        #age;
+
+        constructor(fname, lname, age) {
+            this.#fname = fname;
+            this.#lname = lname;
+            this.#age = age;
+        }
+
+        get fname() {
+            return this.#fname + " Hello";
+        }
+
+        set fname(fname) {
+            this.#fname = fname + " Hii";
+        }
+
+        get lname() {
+            return this.#lname;
+        }
+
+        set lname(lname) {
+            this.#lname = lname;
+        }
+
+        get age() {
+            return this.#age;
+        }
+
+        set age(age) {
+            this.#age = age;
+        }
+    }
+
+    let p = new Person("Kavindu", "Samarasinghe", 32);
+    console.log(p);
+
+    // console.log("fname: ", p.#fname);
+    // console.log("lname: ", p.#lname);
+    // console.log("age: ", p.#age);
+
+    console.log("fname: ", p.fname);
+    p.fname = "Ravindu";
+
+    console.log(p);
+    */
+
+    // Object Literal --------------------------------------------------------------------------------------------
+    let person = {
+        fname: "Kavindu",
+        lname: "Samarasinghe",
+        age: 32
+    };
+
+    console.log(person);
+    console.log("fname: ", person.fname);
+    console.log("lname: ", person.lname);
+    console.log("age: ", person.age);
+
+    person.fname = "Ravindu";
+    console.log(person);
+
+</script>
+
+</body>
+</html>
