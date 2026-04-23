@@ -1,10 +1,10 @@
-import {student_db} from '../db/db.js';
+import {addStudentData, updateStudentData, deleteStudentData, getStudentData} from '../model/StudentModel.js';
 import {check_nic, check_phone} from '../utils/regex_utils.js';
 
-//------------------------- Load Student Tbl ------------------------------
+//------------------------- Load Student Tbl (Read) ------------------------------
 const loadStudentTbl = () => {
     $('#student_tbody').empty();
-
+    let student_db = getStudentData();
     student_db.map((item, index) => {
         let new_row = `<tr data-index="${index}"> <td>${item.id}</td> <td>${item.name}</td> <td>${item.nic}</td> <td>${item.phone}</td> <td>${item.address}</td> </tr>`;
         $('#student_tbody').append(new_row);
@@ -27,23 +27,7 @@ $('#student_tbody').on('click', 'tr', function () {
     $('#student_address_input').val(student_obj.address);
 })
 
-//------------------------- Start: Student Add ------------------------------
-const addStudentData = (sid, sname, snic, sphone, saddress) => {
-    let new_student = {
-        id: sid,
-        name: sname,
-        nic: snic,
-        phone: sphone,
-        address: saddress
-    };
-    student_db.push(new_student);
-    cleanStudentForm();
-
-    Swal.fire({ icon: "success", title: "Student saved successfully!"});
-
-    loadStudentTbl();
-}
-
+//------------------------- Start: Student Add (Create) ------------------------------
 $('#student_save_btn').on('click', function () {
     let id = $('#student_id_input').val();
     let name = $('#student_name_input').val();
@@ -57,27 +41,14 @@ $('#student_save_btn').on('click', function () {
                 (!check_nic(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
                     (!check_phone(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
                         (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : addStudentData(id, name, nic, phone, address);
+
+    cleanStudentForm();
+    Swal.fire({ icon: "success", title: "Student saved successfully!"});
+    loadStudentTbl();
 })
 //------------------------- End: Student Add ------------------------------
 
-//------------------------- Start: Student Update ------------------------------
-const updateStudentData = (sid, sname, snic, sphone, saddress) => {
-    let obj = student_db.find(item => item.id == sid);
-
-    if(obj) {
-        obj.name=sname;
-        obj.nic=snic;
-        obj.phone=sphone;
-        obj.address=saddress
-    }
-
-    cleanStudentForm();
-
-    Swal.fire({ icon: "success", title: "Student updated successfully!"});
-
-    loadStudentTbl();
-}
-
+//------------------------- Start: Student Update (Update) ------------------------------
 $('#student_update_btn').on('click', function () {
     let id = $('#student_id_input').val();
     let name = $('#student_name_input').val();
@@ -91,22 +62,14 @@ $('#student_update_btn').on('click', function () {
                     (!nic_regex.test(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
                         (!phone_regex.test(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
                             (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : updateStudentData(id, name, nic, phone, address);
+
+    cleanStudentForm();
+    Swal.fire({ icon: "success", title: "Student updated successfully!"});
+    loadStudentTbl();
 })
 //------------------------- End: Student Update ------------------------------
 
-//------------------------- Start: Student Delete ------------------------------
-const deleteStudentData = (sid) => {
-    let index = student_db.findIndex(item => item.id == sid); // -1
-
-    if(index!==-1) {
-        student_db.splice(index, 1);
-    }
-
-    cleanStudentForm();
-    Swal.fire({ icon: "success", title: "Student deleted successfully!"});
-    loadStudentTbl();
-}
-
+//------------------------- Start: Student Delete (Delete) ------------------------------
 $('#student_delete_btn').on('click', function () {
     let id = $('#student_id_input').val();
 
@@ -123,6 +86,10 @@ $('#student_delete_btn').on('click', function () {
             (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
                 (!(student_db.find(item => item.id==id))) ? Swal.fire({ icon: "error", title: "Student not found!"}) : deleteStudentData(id);
         };
+
+        cleanStudentForm();
+        Swal.fire({ icon: "success", title: "Student deleted successfully!"});
+        loadStudentTbl();
     });
 });
 //------------------------- End: Student Delete ------------------------------
