@@ -1,5 +1,4 @@
-// ------------------------ Course DB ------------------------------
-let course_db = [];
+import {course_db} from '../db/db.js';
 
 //------------------------- Load Course Tbl ------------------------------
 const loadCourseTbl = () => {
