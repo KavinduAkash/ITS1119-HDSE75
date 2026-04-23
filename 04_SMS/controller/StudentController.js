@@ -1,8 +1,5 @@
 import {student_db} from '../db/db.js';
-
-// ------------------------ Student Regex ------------------------------
-const nic_regex = new RegExp("^(([5,6,7,8,9]{1})([0-9]{1})([0,1,2,3,5,6,7,8]{1})([0-9]{6})([v|V|x|X]))|(([1,2]{1})([0,9]{1})([0-9]{2})([0,1,2,3,5,6,7,8]{1})([0-9]{7}))");
-const phone_regex = new RegExp("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+import {check_nic, check_phone} from '../utils/regex_utils.js';
 
 //------------------------- Load Student Tbl ------------------------------
 const loadStudentTbl = () => {
@@ -57,8 +54,8 @@ $('#student_save_btn').on('click', function () {
     (id == "") ? Swal.fire({ icon: "error", title: "Invalid Id!"}) :
         (student_db.find(item => item.id==id)) ? Swal.fire({ icon: "error", title: "Id is already exist!"}) :
             (name == "") ? Swal.fire({ icon: "error", title: "Invalid Name!"}) :
-                (!nic_regex.test(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
-                    (!phone_regex.test(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
+                (!check_nic(nic)) ? Swal.fire({ icon: "error", title: "Invalid NIC!"}) :
+                    (!check_phone(phone)) ? Swal.fire({ icon: "error", title: "Invalid Phone!"}) :
                         (address == "") ? Swal.fire({ icon: "error", title: "Invalid Address!"}) : addStudentData(id, name, nic, phone, address);
 })
 //------------------------- End: Student Add ------------------------------
