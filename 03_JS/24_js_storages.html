@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../assets/lib/jquery-4.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+
+<script>
+  // ===================== Local Storage =====================
+  localStorage.setItem("username", "Kavindu");
+  localStorage.setItem("phone", "0767111111");
+  localStorage.setItem("address", "Panadura");
+
+  var value = localStorage.getItem("username");
+  console.log(value);
+
+  localStorage.removeItem("phone");
+
+  // ===================== Session Storage =====================
+  sessionStorage.setItem("user", "Akash");
+  sessionStorage.setItem("token", "123456");
+
+  value = sessionStorage.getItem("user");
+  console.log(value);
+
+  sessionStorage.removeItem("token");
+
+  // ===================== Cookie Storage =====================
+  Cookies.set("email", "kavindu@ijse.lk", {expires: 7});
+
+  value = Cookies.get("email");
+  console.log(value);
+
+  Cookies.remove("email");
+
+
+</script>
+
+</body>
+</html>
