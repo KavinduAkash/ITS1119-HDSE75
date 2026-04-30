@@ -2,9 +2,10 @@ body {
     background: black;
 }
 section {
-    width: fit-content;
-    height: fit-content;
     display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -14,7 +15,8 @@ section {
 }
 
 section > div {
-    width: 25px;
-    aspect-ratio: 4/1;
+    width: 40px;
+    aspect-ratio: 1/1;
     border: 1px solid brown;
+    margin: 0px;
 }
