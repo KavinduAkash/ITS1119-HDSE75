@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Event Delegation</title>
+
+</head>
+<body>
+
+    <button>Click!</button>
+
+    <ol>
+        <li data-index="A1">Java</li>
+        <li data-index="A2">Python</li>
+        <li data-index="A3">C</li>
+    </ol>
+
+<script src="../assets/lib/jquery-4.0.0.min.js"></script>
+<script>
+
+    // $('li').on('click', () => {
+    //     console.log("clicked on list items!!!")
+    // });
+
+    $('ol').on('click', 'li', function () { // event delegation
+        // console.log($(this).index());
+        console.log($(this).data('index'));
+    });
+
+    let i = 4;
+
+    $('button').on('click', () => {
+        let new_list = `<li data-index="${"A" + i}">ABC</li>`;
+        $('ol').append(new_list);
+        ++i;
+    })
+
+</script>
+
+</body>
+</html>

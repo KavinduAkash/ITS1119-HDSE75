@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>PostID</th>
+        <th>Email</th>
+        <th>Comment</th>
+    </thead>
+    <tbody id="comment_tbody">
+
+    </tbody>
+</table>
+
+<script src="../assets/lib/jquery-4.0.0.min.js"></script>
+<script>
+
+    fetch("https://jsonplaceholder.typicode.com/comments")
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data);
+            data.map((item, index) => {
+                let new_row = `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.postId}</td><td>${item.email}</td><td>${item.body}</td></tr>`;
+                $("#comment_tbody").append(new_row);
+            });
+        });
+
+</script>
+
+</body>
+</html>

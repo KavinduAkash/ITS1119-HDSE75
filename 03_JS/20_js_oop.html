@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  // ====================== Encapsulation ======================
+  class Person {
+    #fname;
+    #lname;
+    #age;
+
+    constructor(fname, lname, age) {
+      this.#fname = fname;
+      this.#lname = lname;
+      this.#age = age;
+    }
+
+    get fname() {
+      return this.#fname + " Hello";
+    }
+
+    set fname(fname) {
+      this.#fname = fname + " Hii";
+    }
+
+    get lname() {
+      return this.#lname;
+    }
+
+    set lname(lname) {
+      this.#lname = lname;
+    }
+
+    get age() {
+      return this.#age;
+    }
+
+    set age(age) {
+      this.#age = age;
+    }
+  }
+
+  let p = new Person("Kavindu", "Samarasinghe", 32);
+  console.log(p);
+
+  console.log("fname: ", p.fname);
+  p.fname = "Ravindu";
+
+  // ====================== Inheritance ======================
+
+  class Animal {
+    eat() {
+      console.log("Eatting...");
+    }
+  }
+
+  class Dog extends Animal {
+    bark() {
+      console.log("Darking...");
+    }
+  }
+
+  var d = new Dog();
+  d.bark();
+  d.eat();
+
+  // ====================== Polymorphism ======================
+
+  function startMove(obj) {
+    obj.move();
+  }
+
+  var dog = {
+    move: () => { console.log("Dog is running...") }
+  }
+
+  var bird = {
+    move: () => { console.log("Bird is flying...") }
+  }
+
+  // startMove(dog);
+  startMove(bird);
+
+  // ====================== Abstraction ======================
+  class Vehicle {
+    start() {
+      this.#checkEngine();
+      console.log("Start vehicle...");
+    }
+
+    #checkEngine() {
+      console.log("Check Engine...");
+      console.log("Check Sensor 1...");
+      console.log("Check Sensor 2...");
+      console.log("Check Sensor 3...");
+      console.log("Check fuel..");
+    }
+  }
+
+  var v = new Vehicle();
+  v.start();
+
+</script>
+
+</body>
+</html>
